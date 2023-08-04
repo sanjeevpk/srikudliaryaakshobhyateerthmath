@@ -250,4 +250,14 @@
     })
   });
 
+  window.addEventListener('load', () => {
+    let header_height = $('#header').height();
+    let header_title = $('.header_title_text').height();
+    let carousel_height = window.innerHeight - (header_height + header_title + 175);
+    $('.carousel-container').css({'height':carousel_height + 'px'});
+    $('.carousel-container img').css({'height':(carousel_height - 20) + 'px', 'width':'auto'});
+    if(window.innerWidth > 768){
+      $('.logo').addClass('hidden');
+    }
+  });
 })()
